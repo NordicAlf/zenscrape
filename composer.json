@@ -1,0 +1,33 @@
+{
+  "name": "nordicalf/zenscrape",
+  "type": "library",
+  "description": "Zenscrape service",
+  "keywords": [
+    "zenscrape",
+    "parsing",
+    "http",
+    "web service",
+    "client"
+  ],
+  "homepage": "https://github.com/NordicAlf/zenscrape",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andrei Tsvyrko",
+      "email": "nordic_alf@protonmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Zenscrape\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Zenscrape\\Tests\\": "tests/"
+    }
+  }
+}
