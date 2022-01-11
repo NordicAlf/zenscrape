@@ -3,20 +3,21 @@ declare(strict_types=1);
 
 namespace Zenscrape;
 
-use GuzzleHttp\Client;
-use Psr\Http\Message\ResponseInterface;
+use Zenscrape\Http\HttpClient;
 
-class ZenscrapeClient
+class ZenscrapeClient implements  ZensrapeClientInterface
 {
-    protected Client $guzzleClient;
+    protected HttpClient $httpClient;
 
     public function __construct()
     {
-        $this->guzzleClient = new Client();
+        $this->httpClient = new HttpClient();
     }
 
-    public function request(): ResponseInterface
+    public function getPage(string $method, string $url, array $data, array $headers): string
     {
-        return $this->guzzleClient->request('GET', 'https://google.com');
+        $result = $this->httpClient->sendRequest($method, $url, $data, $headers);
+
+        return $result->getMessage();
     }
 }
