@@ -3,14 +3,17 @@ declare(strict_types=1);
 
 namespace Zenscrape;
 
+use Zenscrape\Auth\ApiKey;
 use Zenscrape\Http\HttpClient;
 
-class ZenscrapeClient implements  ZensrapeClientInterface
+class ZenscrapeClient implements ZensrapeClientInterface
 {
-    protected HttpClient $httpClient;
+    private HttpClient $httpClient;
 
-    public function __construct()
+    public function __construct(string $apiKey)
     {
+        ApiKey::setKey($apiKey);
+
         $this->httpClient = new HttpClient();
     }
 
