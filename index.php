@@ -5,6 +5,14 @@ require_once 'vendor/autoload.php';
 use Zenscrape\ZenscrapeClient;
 use Zenscrape\Auth\ApiKey;
 
+$queryRequest = new \Zenscrape\Model\QueryRequestModel();
+$queryRequest->setIsRender(true);
+$queryRequest->setLocation('USA');
+
+$requestTransformer = new \Zenscrape\Transformer\RequestTransformer();
+
+dd($requestTransformer->transformObjectQueryToArray($queryRequest));
+
 $zenscrapeClient = new ZenscrapeClient('95af6ce0-5a46-11eb-bf07-1f620e9d97fd');
 
 $method = 'GET';
