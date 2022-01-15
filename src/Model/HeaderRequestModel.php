@@ -3,31 +3,44 @@ declare(strict_types=1);
 
 namespace Zenscrape\Model;
 
-class HeaderRequestModel
+class HeaderRequestModel implements RequestModelInterface
 {
-    protected string $contentType = 'application/json';
-    protected string $apiKey;
+    protected string $apikey;
+    protected string $cookies;
+    protected array $customHeaders = [];
 
-    public function getContentType(): string
+    public function getApikey(): string
     {
-        return $this->contentType;
+        return $this->apikey;
     }
 
-    public function setContentType(string $contentType): self
+    public function setApikey(string $apiKey): self
     {
-        $this->contentType = $contentType;
+        $this->apikey = $apiKey;
 
         return $this;
     }
 
-    public function getApiKey(): string
+    public function getCookies(): string
     {
-        return $this->apiKey;
+        return $this->cookies;
     }
 
-    public function setApiKey(string $apiKey): self
+    public function setCookies(string $cookies): self
     {
-        $this->apiKey = $apiKey;
+        $this->cookies = $cookies;
+
+        return $this;
+    }
+
+    public function getCustomHeaders(): array
+    {
+        return $this->customHeaders;
+    }
+
+    public function setCustomHeader(string $headerName, string $headerValue): self
+    {
+        $this->customHeaders[$headerName] = $headerValue;
 
         return $this;
     }

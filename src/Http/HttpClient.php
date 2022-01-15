@@ -11,18 +11,19 @@ use Zenscrape\Http\Response\HttpResponseInterface;
 class HttpClient implements HttpClientInterface
 {
     protected Client $guzzleClient;
+    protected string $apiZenscrapeEndpoint = 'https://app.zenscrape.com/api/v1/get';
 
     public function __construct()
     {
         $this->guzzleClient = new Client();
     }
 
-    public function sendRequest(string $method, string $uri, array $data, array $headers): HttpResponseInterface
+    public function sendRequest(string $method, array $query, array $headers): HttpResponseInterface
     {
         try {
-            $result = $this->guzzleClient->request($method, $uri, [
+            $result = $this->guzzleClient->request($method, $this->apiZenscrapeEndpoint, [
                 RequestOptions::HEADERS => $headers,
-                RequestOptions::JSON => $data
+                RequestOptions::JSON => $query
             ]);
 
             $response = new HttpResponse($result->getStatusCode(),  $result->getBody()->getContents());

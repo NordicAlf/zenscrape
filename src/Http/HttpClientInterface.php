@@ -7,5 +7,5 @@ use Zenscrape\Http\Response\HttpResponseInterface;
 
 interface HttpClientInterface
 {
-    public function sendRequest(string $method, string $uri, array $data, array $headers): HttpResponseInterface;
+    public function sendRequest(string $method, array $query, array $headers): HttpResponseInterface;
 }

@@ -3,20 +3,20 @@ declare(strict_types=1);
 
 namespace Zenscrape\Model;
 
-class QueryRequestModel extends AbstractRequestModel
+class QueryRequestModel implements RequestModelInterface
 {
-    protected string $url = ''; // required
-    protected string $location = '';
-    protected bool $isPremiumLocation = false;
-    protected bool $isKeepHeaders = false;
-    protected bool $isDeviceMobileType = false;
-    protected bool $isRender = false;
-    protected int $waitFor = 0;
-    protected string $waitForCss = '';
-    protected string $session = '';
-    protected bool $isScrollToBottom = false;
+    protected string $url;
+    protected string $location;
+    protected bool $premium;
+    protected bool $keepHeaders;
+    protected string $deviceType;
+    protected bool $render;
+    protected int $waitFor;
+    protected string $waitForCss;
+    protected string $session;
+    protected bool $scrollToBottom;
 
-    public function getUrl(): ?string
+    public function getUrl(): string
     {
         return $this->url;
     }
@@ -40,50 +40,50 @@ class QueryRequestModel extends AbstractRequestModel
         return $this;
     }
 
-    public function getIsPremiumLocation(): bool
+    public function getPremium(): bool
     {
-        return $this->isPremiumLocation;
+        return $this->premium;
     }
 
-    public function setIsPremiumLocation(bool $isPremiumLocation): self
+    public function setPremium(bool $isPremiumLocation): self
     {
-        $this->isPremiumLocation = $isPremiumLocation;
+        $this->premium = $isPremiumLocation;
 
         return $this;
     }
 
-    public function getIsKeepHeaders(): bool
+    public function getKeepHeaders(): bool
     {
-        return $this->isKeepHeaders;
+        return $this->keepHeaders;
     }
 
-    public function setIsKeepHeaders(bool $isKeepHeaders): self
+    public function setKeepHeaders(bool $isKeepHeaders): self
     {
-        $this->isKeepHeaders = $isKeepHeaders;
+        $this->keepHeaders = $isKeepHeaders;
 
         return $this;
     }
 
-    public function getIsDeviceMobileType(): bool
+    public function getDeviceType(): string
     {
-        return $this->isDeviceMobileType;
+        return $this->deviceType;
     }
 
-    public function setIsDeviceMobileType(bool $isDeviceMobileType): self
+    public function setDeviceType(string $deviceType): self
     {
-        $this->isDeviceMobileType = $isDeviceMobileType;
+        $this->deviceType = $deviceType;
 
         return $this;
     }
 
-    public function getIsRender(): bool
+    public function getRender(): bool
     {
-        return $this->isRender;
+        return $this->render;
     }
 
-    public function setIsRender(bool $isRender): self
+    public function setRender(bool $isRender): self
     {
-        $this->isRender = $isRender;
+        $this->render = $isRender;
 
         return $this;
     }
@@ -124,14 +124,14 @@ class QueryRequestModel extends AbstractRequestModel
         return $this;
     }
 
-    public function getIsScrollToBottom(): bool
+    public function getScrollToBottom(): bool
     {
-        return $this->isScrollToBottom;
+        return $this->scrollToBottom;
     }
 
-    public function setIsScrollToBottom(bool $isScrollToBottom): self
+    public function setScrollToBottom(bool $scrollToBottom): self
     {
-        $this->isScrollToBottom = $isScrollToBottom;
+        $this->scrollToBottom = $scrollToBottom;
 
         return $this;
     }

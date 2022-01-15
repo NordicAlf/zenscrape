@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- https://phpunit.readthedocs.io/en/latest/configuration.html -->
+<phpunit>
+    <php>
+        <env name="api_key" value="95af6ce0-5a46-11eb-bf07-1f620e9d97fd"/>
+    </php>
+</phpunit>

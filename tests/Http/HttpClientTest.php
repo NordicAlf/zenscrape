@@ -11,17 +11,16 @@ class HttpClientTest extends TestCase
     public function testSendRequest()
     {
         $method = 'GET';
-        $url = 'https://app.zenscrape.com/api/v1/get';
         $data = [
-            'url' => 'https://www.21vek.by/'
+            'url' => 'https://google.com'
         ];
         $headers = [
             'Content-Type' => 'application/json',
-            'apikey' => '95af6ce0-5a46-11eb-bf07-1f620e9d97fd'
+            'apikey' => $_ENV['api_key']
         ];
 
         $httpClient = new HttpClient();
-        $response = $httpClient->sendRequest($method, $url, $data, $headers);
+        $response = $httpClient->sendRequest($method, $data, $headers);
 
         $this->assertInstanceOf(HttpResponse::class, $response);
         $this->assertIsInt($response->getCode());

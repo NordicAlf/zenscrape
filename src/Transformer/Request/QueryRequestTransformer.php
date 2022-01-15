@@ -1,16 +1,16 @@
 <?php
 declare(strict_types=1);
 
-namespace Zenscrape\Transformer;
+namespace Zenscrape\Transformer\Request;
 
 use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
-use Zenscrape\Model\QueryRequestModel;
+use Zenscrape\Model\RequestModelInterface;
 
-class RequestTransformer
+class QueryRequestTransformer implements RequestTransformerInterface
 {
-    public function transformObjectQueryToArray(QueryRequestModel $request): array
+    public function transform(RequestModelInterface $request): array
     {
         $normalizer = new ObjectNormalizer(null, new CamelCaseToSnakeCaseNameConverter());
         $serializer = new Serializer([$normalizer]);
