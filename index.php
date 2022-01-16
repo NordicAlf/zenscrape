@@ -8,8 +8,12 @@ use Zenscrape\Model\QueryRequestModel;
 
 $queryRequest = new QueryRequestModel();
 $queryRequest->setRender(true);
-$queryRequest->setLocation('USA');
-$queryRequest->setUrl('https://nekoguard.github.io/CV/');
+//$queryRequest->setPremium(true);
+//$queryRequest->setScrollToBottom(true);
+$queryRequest->setLocation('eu');
+$queryRequest->setUrl('https://www.tic.com/index.html');
+$queryRequest->setWaitFor(3);
+//$queryRequest->setWaitForCss('.title');
 
 $headersRequest = new HeaderRequestModel();
 

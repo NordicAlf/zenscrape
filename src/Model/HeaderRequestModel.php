@@ -5,28 +5,28 @@ namespace Zenscrape\Model;
 
 class HeaderRequestModel implements RequestModelInterface
 {
-    protected string $apikey;
-    protected string $cookies;
+    protected ?string $apikey = null;
+    protected ?string $cookies = null;
     protected array $customHeaders = [];
 
-    public function getApikey(): string
+    public function getApikey(): ?string
     {
         return $this->apikey;
     }
 
-    public function setApikey(string $apiKey): self
+    public function setApikey(?string $apiKey): self
     {
         $this->apikey = $apiKey;
 
         return $this;
     }
 
-    public function getCookies(): string
+    public function getCookies(): ?string
     {
         return $this->cookies;
     }
 
-    public function setCookies(string $cookies): self
+    public function setCookies(?string $cookies): self
     {
         $this->cookies = $cookies;
 

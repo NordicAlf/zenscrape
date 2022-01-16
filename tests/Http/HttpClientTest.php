@@ -10,9 +10,9 @@ class HttpClientTest extends TestCase
 {
     public function testSendRequest()
     {
-        $method = 'GET';
+        $method = 'POST';
         $data = [
-            'url' => 'https://google.com'
+            'url' => $_ENV['site_url']
         ];
         $headers = [
             'Content-Type' => 'application/json',

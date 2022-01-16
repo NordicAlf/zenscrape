@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 use Zenscrape\Auth\ApiKey;
 use Zenscrape\Model\HeaderRequestModel;
 use Zenscrape\Model\QueryRequestModel;
+use Zenscrape\Storage\LocationStorage;
 use Zenscrape\ZenscrapeClient;
 
 class ZenscrapeClientTest extends TestCase
@@ -14,8 +15,8 @@ class ZenscrapeClientTest extends TestCase
     {
         $queryRequest = new QueryRequestModel();
         $queryRequest
-            ->setLocation('USA')
-            ->setUrl('https://google.com');
+            ->setLocation(LocationStorage::COMMON_EUROPE)
+            ->setUrl($_ENV['site_url']);
 
         $headersRequest = new HeaderRequestModel();
         $headersRequest
