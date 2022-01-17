@@ -1,10 +1,20 @@
 <?php
 declare(strict_types=1);
 
-namespace Zenscrape\Transformer\Request;
+/*
+ * This file is part of the Zenscrape package
+ *
+ * (c) Andrei Tsvyrko <nordic_alf@protonmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Zenscrape\Tests\Transformer\Request;
 
 use PHPUnit\Framework\TestCase;
 use Zenscrape\Model\HeaderRequestModel;
+use Zenscrape\Transformer\Request\HeaderRequestTransformer;
 
 class HeaderRequestTransformerTest extends TestCase
 {

@@ -6,6 +6,8 @@ use Zenscrape\ZenscrapeClient;
 use Zenscrape\Model\HeaderRequestModel;
 use Zenscrape\Model\QueryRequestModel;
 
+\Zenscrape\Auth\ApiKey::setKey();
+
 $queryRequest = new QueryRequestModel();
 $queryRequest->setRender(true);
 //$queryRequest->setPremium(true);

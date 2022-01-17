@@ -1,6 +1,15 @@
 <?php
 declare(strict_types=1);
 
+/*
+ * This file is part of the Zenscrape package
+ *
+ * (c) Andrei Tsvyrko <nordic_alf@protonmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Zenscrape\Validator;
 
 use Zenscrape\Exception\ZenscrapeException;
@@ -8,6 +17,9 @@ use Zenscrape\Model\QueryRequestModel;
 use Zenscrape\Storage\LocationStorage;
 use Zenscrape\Storage\MessageStorage;
 
+/**
+ * Class QueryRequestValidator check all query data for request
+ */
 class QueryRequestValidator implements ValidatorInterface
 {
     public function __construct(

@@ -1,6 +1,15 @@
 <?php
 declare(strict_types=1);
 
+/*
+ * This file is part of the Zenscrape package
+ *
+ * (c) Andrei Tsvyrko <nordic_alf@protonmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Zenscrape\Http;
 
 use GuzzleHttp\Client;
@@ -8,6 +17,9 @@ use GuzzleHttp\RequestOptions;
 use Zenscrape\Http\Response\HttpResponse;
 use Zenscrape\Http\Response\HttpResponseInterface;
 
+/**
+ * Class HttpClient serves to send requests to zenscrape.com via Guzzle
+ */
 class HttpClient implements HttpClientInterface
 {
     protected Client $guzzleClient;
