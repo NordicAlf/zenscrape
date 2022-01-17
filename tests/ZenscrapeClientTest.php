@@ -28,11 +28,9 @@ class ZenscrapeClientTest extends TestCase
             ->setUrl($_ENV['site_url']);
 
         $headersRequest = new HeaderRequestModel();
-        $headersRequest
-            ->setApikey($_ENV['api_key'])
-            ->setCustomHeader('Content-Type', 'application/json');
+        $headersRequest->setCustomHeader('Content-Type', 'application/json');
 
-        $zenscrapeClient = new ZenscrapeClient('95af6ce0-5a46-11eb-bf07-1f620e9d97fd');
+        $zenscrapeClient = new ZenscrapeClient($_ENV['api_key']);
 
         $page = $zenscrapeClient->getPage('POST', $queryRequest, $headersRequest);
 

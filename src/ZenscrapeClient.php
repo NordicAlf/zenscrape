@@ -45,6 +45,8 @@ class ZenscrapeClient implements ZensrapeClientInterface
 
     public function getPage(string $method, QueryRequestModel $query, HeaderRequestModel $headers): string
     {
+        $headers->setApikey(ApiKey::getKey());
+
         $queryRequestValidation = new QueryRequestValidator($query);
         $queryRequestValidation->check();
 
